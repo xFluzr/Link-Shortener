@@ -1,13 +1,14 @@
 import React from 'react'
 import Navbar from './Navbar'
+import ShortenLink from './ShortenLink'
 
-const Main = () => {
+const Wrapper = () => {
   return (
     <>
         <Navbar/>
-        <Main/>
+        <ShortenLink/>
     </>
   )
 }
 
-export default Main
+export default Wrapper

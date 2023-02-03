@@ -1,12 +1,7 @@
 import React from 'react'
-import { fetchData } from './utils/api'
-
+import Wrapper from './components/Wrapper'
 const App = () => {
-    const data=fetchData();
-    console.log(data)
-  return (
-    <div></div>
-  )
+  return <Wrapper/>
 }
 
 export default App
