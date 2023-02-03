@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { fetchData } from '../utils/api';
+import LinkList from './LinkList';
 import './ShortLinks.css';
 
 const ShortenLink = () => {
   const [inputValue,setInputValue]=useState('');
-  const [isSent,setIsSent]=useState(false);
-  const [shortLinks,setShortLinks]=useState(null)
+  const [links,setLinks]=useState(null)
 
   const inputHanlder=(e)=>{
     setInputValue(e.target.value)
@@ -13,13 +13,12 @@ const ShortenLink = () => {
 
   const submitHandler=(e)=>{
     e.preventDefault();
-    setIsSent(true)
-    setInputValue('')
+    setInputValue('');
     const fetchingData=async()=>{
       try{
         const responseData=await fetchData(`${inputValue}`);
-        setShortLinks(responseData)
-        console.log(responseData)
+        setLinks(responseData)
+
       }catch{
         throw Error("Something went wrong");
       }
@@ -30,18 +29,17 @@ const ShortenLink = () => {
   
 
   return (
-    <>
+    <main>
       <form className='form' onSubmit={submitHandler}>
-          <h3>Shorten your link</h3>
-          <input type='text' value={inputValue} onChange={inputHanlder}/>
-          <button type='submit'>Shorten</button>
+          <h1 className='main-title'>Shorten your link</h1>
+          <div className='form__input-wrapper'> 
+            <input className='form__input-item form-input'type='text' value={inputValue} onChange={inputHanlder}/>
+            <button className='form__input-item form-btn'type='submit'>Shorten</button>
+          </div>
+         
       </form>
-      <ul>
-        {shortLinks===null?'':shortLinks.map((item,index)=>(
-          <li key={index}><a href={item}>{item}</a></li>
-        ))}
-      </ul>
-    </>
+      <LinkList links={links}/>
+    </main>
   )
 }
 

@@ -1,6 +1,49 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    padding: 8rem 0rem;
+    width: 45%;
+    margin: 0 auto;
+}
+.main-title{
+    font-family: var(--font-optional);
+    font-size: 3rem;
+}
+.form__input-wrapper{
+    border: 1px solid rgb(17, 17, 17);
+    display: flex;
+    width: 100%;
+}
+.form-input{
+    flex:6;
+    padding: 21px 20px;
+    font-size: 1.3rem;
+    outline: 0;
+    border: 0;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.form-btn{
+    flex: 1;
+    background-color:#32b6ff ;
+    border: 0;
+    outline: 0;
+    padding: 20px 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.form-btn:hover{
+    background-color: #30b4fc ;
+    cursor: pointer;
 }
