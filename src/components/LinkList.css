@@ -1,0 +1,42 @@
+.links-list{
+    width: 48%;
+    font-family: var(--font-main);
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: relative;
+    
+}
+.list-item{
+    width: 50%;
+    border-bottom: 2px solid var(--dark);
+    margin: 10px 5px;
+    padding: 0.15rem 1rem;
+}
+.list-number{
+    position: absolute;
+    cursor: pointer;
+    left: -10px;
+    background-color: var(--blue);
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    color: var(--light);
+}
+.list-number::after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: 5px;
+}
+.list-number:hover::after{
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--blue);
+}
+.link{
+    color: var(--dark);
+    text-decoration: none;
+}
