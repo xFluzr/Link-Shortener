@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Mulish:wght@400;700&family=Quicksand:wght@400;700&display=swap');
 
 /*Variables*/
 :root{
@@ -8,7 +8,7 @@
     --red:#fa8072;
     --blue:#349dff;
     --font-main:'Quicksand', sans-serif;
-    --font-optional:'Merriweather', sans-serif;
+    --font-optional:'Mulish', sans-serif;
 }
 
 *{
@@ -18,9 +18,10 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #FFDB7D;
 }
 #root{
-    background-color: #FFDB7D;
+    
     height: 100vh;
     position: relative;
 }

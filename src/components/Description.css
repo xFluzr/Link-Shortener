@@ -1,5 +1,13 @@
 .content__wrapper{
     margin: 4rem auto;
-    border: 2px solid black;
     width: 50%;
+    font-family: var(--font-main);
 }
+.content__wrapper h3{
+    font-size: 1.6rem;
+}
+
+.content__wrapper p{
+    font-size: 1.2rem;
+}
+

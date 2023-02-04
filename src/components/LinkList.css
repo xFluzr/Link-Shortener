@@ -4,18 +4,23 @@
     font-weight: bold;
     font-size: 1.3rem;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     
 }
 .list-item{
-    width: 70%;
+    width: 50%;
     border-bottom: 2px solid var(--dark);
     margin: 1.5rem 0.5rem;
     padding: 0.5rem 1rem;
+  
 }
 .list-number{
     position: absolute;
     cursor: pointer;
-    left: -10px;
+    left: 175px;
     background-color: var(--blue);
     text-align: center;
     height: 30px;
@@ -39,4 +44,17 @@
 .link{
     color: var(--dark);
     text-decoration: none;
+}
+
+@media screen and (max-width:800px) {
+    .links-list{
+        width: 100%;
+        margin: 0;
+    }
+    .list-item{
+        width: 90%;
+    }
+    .list-number{
+        left: 10px;
+    }
 }
