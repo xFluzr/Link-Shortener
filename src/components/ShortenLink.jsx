@@ -3,10 +3,9 @@ import { fetchData } from '../utils/api';
 import LinkList from './LinkList';
 import './ShortLinks.css';
 
-const ShortenLink = () => {
+const ShortenLink = ({links,setLinks,setIsValid,isValid,setShowValidationBar}) => {
   const [inputValue,setInputValue]=useState('');
-  const [links,setLinks]=useState(null)
-
+  
   const inputHanlder=(e)=>{
     setInputValue(e.target.value)
   }
@@ -14,14 +13,19 @@ const ShortenLink = () => {
   const submitHandler=(e)=>{
     e.preventDefault();
     setInputValue('');
+    setShowValidationBar(true);
+    setTimeout(()=>{
+      setShowValidationBar(false);
+    },2000)
     const fetchingData=async()=>{
-      try{
         const responseData=await fetchData(`${inputValue}`);
-        setLinks(responseData)
-
-      }catch{
-        throw Error("Something went wrong");
-      }
+        if(responseData===null){
+          setLinks(null);
+          setIsValid(false);
+        }else{
+          setLinks(responseData)
+          setIsValid(true)
+        } 
     }
     fetchingData()
   }
@@ -38,7 +42,7 @@ const ShortenLink = () => {
           </div>
          
       </form>
-      <LinkList links={links}/>
+      {isValid&&<LinkList links={links}/>}
     </main>
   )
 }
