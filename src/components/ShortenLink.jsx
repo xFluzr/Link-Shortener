@@ -3,7 +3,7 @@ import { fetchData } from '../utils/api';
 import LinkList from './LinkList';
 import './ShortLinks.css';
 
-const ShortenLink = ({links,setLinks,setIsValid,isValid,setShowValidationBar}) => {
+const ShortenLink = ({links,setLinks,setIsValid,isValid,setAnimations}) => {
   const [inputValue,setInputValue]=useState('');
   
   const inputHanlder=(e)=>{
@@ -13,10 +13,8 @@ const ShortenLink = ({links,setLinks,setIsValid,isValid,setShowValidationBar}) =
   const submitHandler=(e)=>{
     e.preventDefault();
     setInputValue('');
-    setShowValidationBar(true);
-    setTimeout(()=>{
-      setShowValidationBar(false);
-    },2000)
+    setAnimations(true);
+    setTimeout(()=>setAnimations(false),4000)
     const fetchingData=async()=>{
         const responseData=await fetchData(`${inputValue}`);
         if(responseData===null){
@@ -27,6 +25,7 @@ const ShortenLink = ({links,setLinks,setIsValid,isValid,setShowValidationBar}) =
           setIsValid(true)
         } 
     }
+   
     fetchingData()
   }
 

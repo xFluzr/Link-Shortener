@@ -6,16 +6,16 @@ import ValidationBar from '../components/ValidationBar';
 
 const Home = () => {
   const [isValid,setIsValid]=useState(false);
-  const [showValidationBar,setShowValidationBar]=useState(false);
+  const [animations,setAnimations]=useState(false);
   const [links,setLinks]=useState(null);
-
+  console.log(animations)
   let message=`${!isValid?'Link Invalid':'Link Valid'}`
 
   return (
     <>
-        {showValidationBar&&<ValidationBar message={message} isValid={isValid}/>}
+        <ValidationBar message={message} isValid={isValid} animations={animations}/>
         <Navbar/>
-        <ShortenLink links={links} setLinks={setLinks} setIsValid={setIsValid} isValid={isValid} setShowValidationBar={setShowValidationBar} />
+        <ShortenLink links={links} setLinks={setLinks} setIsValid={setIsValid} isValid={isValid} setAnimations={setAnimations}/>
         <Footer/>
     </>
   )

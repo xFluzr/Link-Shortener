@@ -2,16 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
     padding: 10px 0px;
     font-family: var(--font-main);
     font-weight: 700;
     color: var(--light);
-    animation-name: slide-in;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-    transform: translate(0, -20px) 
+    position: absolute;
+    width: 100%;
+    top: -40px;
 }
 
 .validation__bar.valid{
@@ -19,29 +16,25 @@
 }
 
 .validation__bar.unvalid{
-  
-    background-color: var(--red);
- 
+    background-color: var(--red);  
 }
-@keyframes slide-in {
-    0% {
-      transform: translate(0, -20px);
-      opacity:.1
-    }
-    50% {
-      transform: translate(0, 0);
-      opacity:1
-    
-    }
-    75%{
-        transform: translate(0, 0);
-        opacity: 0.9;
-    }
-    100%{
-        transform: translate(0,-40px);
-        opacity: .1;
-    }
+.animate{
+    animation: slide 3s ease-in-out;
 }
 
+@keyframes slide{
+    0%{
+        transform: translateY(-40px);
+    }
+    25%{
+        transform: translateY(40px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+    100%{
+        transform: translateY(-40px);
+    }
+}
 
 

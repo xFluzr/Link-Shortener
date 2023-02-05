@@ -1,9 +1,9 @@
 import React from 'react';
 import './ValidationBar.css';
 
-const ValidationBar = ({message,isValid}) => {
+const ValidationBar = ({message,isValid,animations}) => {
   return (
-    <div className={`validation__bar ${isValid?'valid':'unvalid'}`}>
+    <div className={`validation__bar ${isValid?'valid':'unvalid'} ${animations?'animate':''}`}>
         {message}
     </div>
   )
